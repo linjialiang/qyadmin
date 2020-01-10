@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74a749574e0f40df27b0061a71e2b878",
+    "content-hash": "cccf12729eabe6e95bc532612d3e63ed",
     "packages": [
         {
             "name": "league/flysystem",
@@ -148,6 +148,62 @@
             ],
             "description": "An adapter decorator to enable meta-data caching.",
             "time": "2018-07-09T20:51:04+00:00"
+        },
+        {
+            "name": "linjialiang/tp6-captcha",
+            "version": "v6.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linjialiang/tp6-captcha.git",
+                "reference": "e425e52a1c506b0f8bf17461553bbfba3902733a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/e425e52a1c506b0f8bf17461553bbfba3902733a",
+                "reference": "e425e52a1c506b0f8bf17461553bbfba3902733a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-imagick": "*",
+                "topthink/framework": "^6.0.1"
+            },
+            "type": "library",
+            "extra": {
+                "think": {
+                    "services": [
+                        "linjialiang\\captcha\\CaptchaService"
+                    ],
+                    "config": {
+                        "captcha": "src/config.php"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "linjialiang\\captcha\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "linjialiang",
+                    "email": "linjialiang@163.com"
+                }
+            ],
+            "description": "captcha package for ThinkPHP 6.0",
+            "time": "2020-01-10T08:11:31+00:00"
         },
         {
             "name": "opis/closure",
