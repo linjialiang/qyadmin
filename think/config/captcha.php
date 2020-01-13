@@ -13,15 +13,15 @@ return [
     // 是否使用中文验证码
     'useZh'    => false,
     // 是否使用算术验证码
-    'math'     => false,
+    'math'     => true,
     // 是否使用背景图
     'useImgBg' => false,
     // 验证码字符大小
     'fontSize' => 25,
     // 是否使用混淆曲线
-    'useCurve' => true,
+    'useCurve' => false,
     // 是否添加杂点
-    'useNoise' => true,
+    'useNoise' => false,
     // 验证码字体 不设置则随机
     'fontttf'  => '',
     // 背景颜色
@@ -33,7 +33,7 @@ return [
     // 验证码图片宽度
     'imageW'   => 0,
     // 随机运算符号，支持加(+)、减(-)、乘(*)、除(/)、取模(%)5种运算
-    'operators' => ['+', '-'],
+    'operators' => ['+', '-', '*', '/', '%'],
 
     // 添加额外的验证码设置
     // verify => [

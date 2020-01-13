@@ -151,16 +151,16 @@
         },
         {
             "name": "linjialiang/tp6-captcha",
-            "version": "v6.0.5",
+            "version": "v6.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/linjialiang/tp6-captcha.git",
-                "reference": "3e74fa7734083faae17563f01e266ba89bf4bbd3"
+                "reference": "380946a1d4faeaea5ff064fb6fe3afb16b1cbf5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/3e74fa7734083faae17563f01e266ba89bf4bbd3",
-                "reference": "3e74fa7734083faae17563f01e266ba89bf4bbd3",
+                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/380946a1d4faeaea5ff064fb6fe3afb16b1cbf5c",
+                "reference": "380946a1d4faeaea5ff064fb6fe3afb16b1cbf5c",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -203,7 +203,7 @@
                 }
             ],
             "description": "captcha package for ThinkPHP 6.0",
-            "time": "2020-01-13T08:23:04+00:00"
+            "time": "2020-01-13T09:24:07+00:00"
         },
         {
             "name": "opis/closure",
