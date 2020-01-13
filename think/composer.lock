@@ -151,16 +151,16 @@
         },
         {
             "name": "linjialiang/tp6-captcha",
-            "version": "v6.0.2",
+            "version": "v6.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/linjialiang/tp6-captcha.git",
-                "reference": "e425e52a1c506b0f8bf17461553bbfba3902733a"
+                "reference": "3e74fa7734083faae17563f01e266ba89bf4bbd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/e425e52a1c506b0f8bf17461553bbfba3902733a",
-                "reference": "e425e52a1c506b0f8bf17461553bbfba3902733a",
+                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/3e74fa7734083faae17563f01e266ba89bf4bbd3",
+                "reference": "3e74fa7734083faae17563f01e266ba89bf4bbd3",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -203,7 +203,7 @@
                 }
             ],
             "description": "captcha package for ThinkPHP 6.0",
-            "time": "2020-01-10T08:11:31+00:00"
+            "time": "2020-01-13T08:23:04+00:00"
         },
         {
             "name": "opis/closure",
@@ -488,16 +488,16 @@
         },
         {
             "name": "topthink/framework",
-            "version": "v6.0.1",
+            "version": "v6.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/framework.git",
-                "reference": "501f3dd17dc6266e17b7d8df3e9fd090bd2cc85f"
+                "reference": "1444cce94b40a836958380b160a5fb7bfc165daf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/framework/zipball/501f3dd17dc6266e17b7d8df3e9fd090bd2cc85f",
-                "reference": "501f3dd17dc6266e17b7d8df3e9fd090bd2cc85f",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/1444cce94b40a836958380b160a5fb7bfc165daf",
+                "reference": "1444cce94b40a836958380b160a5fb7bfc165daf",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -552,7 +552,7 @@
                 "orm",
                 "thinkphp"
             ],
-            "time": "2019-12-24T07:57:03+00:00"
+            "time": "2020-01-13T05:48:05+00:00"
         },
         {
             "name": "topthink/think-helper",
@@ -601,16 +601,16 @@
         },
         {
             "name": "topthink/think-orm",
-            "version": "v2.0.30",
+            "version": "v2.0.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/top-think/think-orm.git",
-                "reference": "b6f61fc243974a25cb6914b84a529b373a717626"
+                "reference": "d6965dfae21f150e29cc899ab6f9b1bd2c0f2ee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/top-think/think-orm/zipball/b6f61fc243974a25cb6914b84a529b373a717626",
-                "reference": "b6f61fc243974a25cb6914b84a529b373a717626",
+                "url": "https://api.github.com/repos/top-think/think-orm/zipball/d6965dfae21f150e29cc899ab6f9b1bd2c0f2ee4",
+                "reference": "d6965dfae21f150e29cc899ab6f9b1bd2c0f2ee4",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -648,7 +648,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2020-01-02T09:09:50+00:00"
+            "time": "2020-01-07T10:05:10+00:00"
         }
     ],
     "packages-dev": [

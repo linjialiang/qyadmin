@@ -19,9 +19,9 @@ return [
     // 验证码字符大小
     'fontSize' => 25,
     // 是否使用混淆曲线
-    'useCurve' => false,
+    'useCurve' => true,
     // 是否添加杂点
-    'useNoise' => false,
+    'useNoise' => true,
     // 验证码字体 不设置则随机
     'fontttf'  => '',
     // 背景颜色
