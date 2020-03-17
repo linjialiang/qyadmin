@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/* 登陆界面 */
+.particle{
+    min-height: 95vh;
+    overflow-x: hidden;
+}
+
+.login{
+    border: 1px solid #efefef;
+    padding: 20px;
+    position: absolute;
+    width: 510px;
+    height: 260px;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+}
