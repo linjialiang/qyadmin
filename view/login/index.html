@@ -17,7 +17,10 @@
     <body>
         <main class="layui-fluid">
             <article class="particle"></article>
-            <form class="layui-form layui-form-pane login">
+            <form
+                class="layui-form layui-form-pane login"
+                action=""
+            >
                 <fieldset class="layui-elem-field layui-field-title">
                     <legend>qyadmin 登陆界面</legend>
                 </fieldset>
@@ -60,15 +63,17 @@
                         />
                     </div>
                     <div class="layui-input-inline">
-                        <input
-                            type="image"
-                            src="https://www.oschina.net/action/user/captcha"
+                        <img
+                            src="http://think.y746.com/captcha"
+                            alt="验证码"
+                            height="38"
+                            id="captcha"
                         />
                     </div>
                 </section>
                 <section class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" type="submit">登 陆</button>
+                        <button class="layui-btn" type="submit" lay-submit="" lay-filter="login">登 陆</button>
                         <button
                             class="layui-btn layui-btn-primary"
                             type="reset"
