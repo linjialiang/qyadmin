@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5b2d3ebbdf0829a1208b9e74f1cbbad",
+    "content-hash": "bdc1e01fb921219d491af486426081b2",
     "packages": [
         {
             "name": "league/flysystem",
@@ -148,62 +148,6 @@
             ],
             "description": "An adapter decorator to enable meta-data caching.",
             "time": "2018-07-09T20:51:04+00:00"
-        },
-        {
-            "name": "linjialiang/tp6-captcha",
-            "version": "v6.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/linjialiang/tp6-captcha.git",
-                "reference": "380946a1d4faeaea5ff064fb6fe3afb16b1cbf5c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/380946a1d4faeaea5ff064fb6fe3afb16b1cbf5c",
-                "reference": "380946a1d4faeaea5ff064fb6fe3afb16b1cbf5c",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "ext-imagick": "*",
-                "topthink/framework": "^6.0.1"
-            },
-            "type": "library",
-            "extra": {
-                "think": {
-                    "services": [
-                        "linjialiang\\captcha\\CaptchaService"
-                    ],
-                    "config": {
-                        "captcha": "src/config.php"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "linjialiang\\captcha\\": "src/"
-                },
-                "files": [
-                    "src/helper.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "linjialiang",
-                    "email": "linjialiang@163.com"
-                }
-            ],
-            "description": "captcha package for ThinkPHP 6.0",
-            "time": "2020-01-13T09:24:07+00:00"
         },
         {
             "name": "opis/closure",
@@ -553,6 +497,61 @@
                 "thinkphp"
             ],
             "time": "2020-01-13T05:48:05+00:00"
+        },
+        {
+            "name": "topthink/think-captcha",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-captcha.git",
+                "reference": "0b4305da19e118cefd934007875a8112f9352f01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/0b4305da19e118cefd934007875a8112f9352f01",
+                "reference": "0b4305da19e118cefd934007875a8112f9352f01",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "topthink/framework": "^6.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "think": {
+                    "services": [
+                        "think\\captcha\\CaptchaService"
+                    ],
+                    "config": {
+                        "captcha": "src/config.php"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\captcha\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "captcha package for thinkphp",
+            "time": "2019-10-03T07:45:11+00:00"
         },
         {
             "name": "topthink/think-helper",

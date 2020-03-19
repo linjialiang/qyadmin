@@ -16,6 +16,4 @@ Route::get('think', function () {
 
 Route::get('hello/:name', 'index/hello');
 
-Route::get('captcha', function () {
-    return \linjialiang\captcha\facade\Captcha::create();
-});
+Route::get('captcha/[:id]', "\\think\\captcha\\CaptchaController@index");

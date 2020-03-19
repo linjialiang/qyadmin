@@ -17,12 +17,9 @@
     <body>
         <main class="layui-fluid">
             <article class="particle"></article>
-            <form
-                class="layui-form layui-form-pane login"
-                action=""
-            >
+            <form class="layui-form layui-form-pane login" action="">
                 <fieldset class="layui-elem-field layui-field-title">
-                    <legend>qyadmin 登陆界面</legend>
+                    <legend>qyadmin 注册界面</legend>
                 </fieldset>
                 <section class="layui-form-item">
                     <label class="layui-form-label">用户</label>
@@ -54,9 +51,9 @@
                     <label class="layui-form-label">验证码</label>
                     <div class="layui-input-inline">
                         <input
-                            type="verify"
-                            name="verify"
-                            lay-verify="verify"
+                            type="text"
+                            name="captcha"
+                            lay-verify="captcha"
                             autocomplete="off"
                             placeholder="验证码"
                             class="layui-input"
@@ -64,7 +61,7 @@
                     </div>
                     <div class="layui-input-inline">
                         <img
-                            src="http://think.y746.com/captcha"
+                            src="{:captcha_src()}"
                             alt="验证码"
                             height="38"
                             id="captcha"
@@ -73,7 +70,14 @@
                 </section>
                 <section class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" type="submit" lay-submit="" lay-filter="login">登 陆</button>
+                        <button
+                            class="layui-btn"
+                            type="submit"
+                            lay-submit=""
+                            lay-filter="login"
+                        >
+                            注 册
+                        </button>
                         <button
                             class="layui-btn layui-btn-primary"
                             type="reset"
@@ -85,13 +89,23 @@
             </form>
         </main>
         <!-- 通用js：layui 全模块脚本 -->
-        <script src="/layui@2.5.6/layui.all.js" charset="utf-8"></script>
+        <script src="/layui@2.5.6/layui.js" charset="utf-8"></script>
         <!-- 通用js：JParticles 基础框架脚本 -->
         <script src="/JParticles@2.0.1/jparticles.js" charset="utf-8"></script>
         <!-- 通用js：JParticles 引入粒子特效脚本 -->
         <script src="/JParticles@2.0.1/particle.js" charset="utf-8"></script>
         <!-- 专属js：登陆界面脚本 -->
-        <script src="/static/js/login.js" charset="utf-8"></script>
-        <script></script>
+        <script src="/static/js/login-base.js" charset="utf-8"></script>
+        <script src="/static/js/register.js" charset="utf-8"></script>
+        <script>
+            /**
+             * 刷新验证码
+             */
+            var captcha = document.getElementById("captcha");
+            captcha.onclick = captchaFlush;
+            function captchaFlush() {
+                captcha.src = "{:captcha_src()}?t=" + Math.random();
+            }
+        </script>
     </body>
 </html>
