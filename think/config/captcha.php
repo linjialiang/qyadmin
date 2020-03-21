@@ -5,13 +5,13 @@
 
 return [
     // 验证码位数
-    'length'     => 3,
+    'length'     => 5,
     // 验证码过期时间
     'expire'     => 1800,
     // 是否使用中文验证码
     'useZh'      => false,
     // 是否使用算术验证码
-    'math'       => true,
+    'math'       => false,
     // 是否使用背景图
     'useImgBg'   => false,
     // 验证码字符大小
@@ -19,7 +19,7 @@ return [
     // 是否使用混淆曲线
     'useCurve'   => false,
     // 是否添加杂点
-    'useNoise'   => true,
+    'useNoise'   => false,
     // 杂色大小
     'fontSizeNoise' => 20,
     // 验证码字体 不设置则随机
