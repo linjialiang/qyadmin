@@ -151,16 +151,16 @@
         },
         {
             "name": "linjialiang/tp6-captcha",
-            "version": "v6.0.8",
+            "version": "v6.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/linjialiang/tp6-captcha.git",
-                "reference": "eb306880e8daab66c6f9ba7284c812151f8e00e3"
+                "reference": "5fb1d59d83e7a895a3688b5e8122ca2584198acd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/eb306880e8daab66c6f9ba7284c812151f8e00e3",
-                "reference": "eb306880e8daab66c6f9ba7284c812151f8e00e3",
+                "url": "https://api.github.com/repos/linjialiang/tp6-captcha/zipball/5fb1d59d83e7a895a3688b5e8122ca2584198acd",
+                "reference": "5fb1d59d83e7a895a3688b5e8122ca2584198acd",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -203,7 +203,7 @@
                 }
             ],
             "description": "The Captcha class library for ThinkPHP 6.0, which relies on php_Imagick",
-            "time": "2020-03-20T08:27:50+00:00"
+            "time": "2020-03-21T02:12:34+00:00"
         },
         {
             "name": "opis/closure",
@@ -857,6 +857,20 @@
             "keywords": [
                 "debug",
                 "dump"
+            ],
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-02-24T13:10:00+00:00"
         },
