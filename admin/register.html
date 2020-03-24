@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>qyadmin 后台管理系统</title>
+    </head>
+    <body>
+        <form id="register">
+            <h1>{{title}}</h1>
+            <ul>
+                <li v-for="formData in formDatas">
+                    <section v-for="inputData in formData">
+                        <label>
+                            {{inputData.name}}
+                            <input
+                                :type="inputData.type"
+                                :id="inputData.id"
+                                :placeholder="inputData.placeholder"
+                            />
+                        </label>
+                    </section>
+                </li>
+                <li>
+                    <label>
+                        验证码：
+                        <input
+                            type="text"
+                            name="captcha"
+                            placeholder="验证码"
+                        />
+                        <img
+                            :src="captchaUrl"
+                            id="captcha"
+                            alt=""
+                            height="30px"
+                            @click="captchaUrlPush"
+                        />
+                    </label>
+                </li>
+            </ul>
+            <section>
+                <button type="submit">注册</button>
+                <button type="reset">重置</button>
+            </section>
+        </form>
+        <script src="./static/vue@2.6.11/vue.js"></script>
+        <script>
+            let vm = new Vue({
+                el: "#register",
+                data: {
+                    title: "管理员注册界面",
+                    formDatas: [
+                        {
+                            username: {
+                                name: "用户名",
+                                type: "text",
+                                id: "username",
+                                placeholder: "请输入登陆名"
+                            }
+                        },
+                        {
+                            password: {
+                                name: "密码",
+                                type: "password",
+                                id: "password",
+                                placeholder: "请输入密码"
+                            }
+                        },
+                        {
+                            "confirm-password": {
+                                name: "确认密码",
+                                type: "password",
+                                id: "password",
+                                placeholder: "再次输入密码"
+                            }
+                        }
+                    ],
+                    captchaUrl:
+                        "http://think.y746.com/captcha?t=" + Math.random()
+                },
+                methods: {
+                    captchaUrlPush: function() {
+                        let url =
+                            "http://think.y746.com/captcha?t=" + Math.random();
+                        this.captchaUrl = url;
+                    },
+
+                }
+            });
+        </script>
+    </body>
+</html>
