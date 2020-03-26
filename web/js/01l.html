@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello, world!</title>
+    </head>
+    <body>
+        <header>
+            <h1>Hello World!</h1>
+        </header>
+        <main>
+            <article>
+                <hgroup hidden>
+                    <h2>“script” 标签</h2>
+                    <h3>
+                        JavaScript 程序可以在 &lt;script&gt;
+                        标签的帮助下插入到HTML 文档的任何地方。
+                    </h3>
+                </hgroup>
+                <p>js 代码之前</p>
+                <script>
+                    alert('I‘m JavaScript!');
+                </script>
+                <p>js 代码之后</p>
+            </article>
+            <article>
+                <hgroup>
+                    <h2>外部脚本</h2>
+                    <h3>如果你有大量的 JavaScript 代码，我们可以将它放入一个单独的文件。</h3>
+                </hgroup>
+                <section>
+                    <h3>相对路径</h3>
+                    <script src="../static/js/01.js"></script>
+                </section>
+                <section>
+                    <h3>绝对路径</h3>
+                    <script src="/static/js/01.js"></script>
+                </section>
+                <section>
+                    <h3>带url路径</h3>
+                    <script src="http://www.y746.com/01.js"></script>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>
