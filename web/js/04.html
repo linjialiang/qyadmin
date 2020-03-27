@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>变量</title>
+    </head>
+    <body>
+        <main>
+            <article>
+                <h3><strong>变量</strong> -- 就是用来存储信息的</h3>
+                <h4>
+                    <strong>官方点的定义</strong> --
+                    变量是数据的“命名存储”。我们可以使用变量来保存商品、访客和其他信息。
+                </h4>
+            </article>
+            <article>
+                <h3>变量的申明（或者说定义）</h3>
+                <strong>现代化的js代码使用 let 和 const 来什么变量</strong>
+                <ul>
+                    <li>
+                        <strong>let</strong> --
+                        现代的变量声明方式，变量值可以改变
+                    </li>
+                    <li>
+                        <strong>const</strong> --
+                        现代的变量申明方式，一旦定义后变量值无法改变，我们也通常叫做
+                        <strong>常量</strong>
+                    </li>
+                </ul>
+                <strong
+                    >常量其实只是特殊点的变量，常量是赋值后无法改变的变量，使用const来声明</strong
+                >
+            </article>
+            <article>
+                <h3>申明变量-变量的命名规则</h3>
+                <ul>
+                    <li>01 - 变量名称只能包含：数字、字母、$、_</li>
+                    <li>02 - 变量名称首字母不能是数字</li>
+                    <li>03 - 变量名称区分大小写</li>
+                    <li>04 - 变量名称不能使用JavaScript的保留字</li>
+                    <li>05 - 在编程的世界里“字母”包含：汉语等其他非英文字母</li>
+                    <li>
+                        06 -
+                        现代JS必须先声明变量后才能赋值，未声明变量就对变量赋值会报错
+                    </li>
+                    <li>
+                        07 -
+                        现代JS中，使用const申明的变量，如果试图改变其值就会报错
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>变量赋值举例</h3>
+                <pre>
+    let number;
+    number = 1;
+
+    let p1, p2, p3;
+    p1 = 'class_p1';
+    p2 = 'class_p2';
+    p3 = 'class_p3';
+
+    let language = 'zh-CN';
+
+    const LANG_CN = 'zh-CN';
+        </pre>
+            <strong>对于不会变更的变量（用const声明的变量）-- 用大写字母命名</strong>
+            </article>
+            <script src="./../static/js/04.js" charset="utf-8"></script>
+        </main>
+    </body>
+</html>

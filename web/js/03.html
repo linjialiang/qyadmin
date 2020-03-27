@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>现代模式，"use strict"</title>
+    </head>
+    <body>
+        <main>
+            <p>现代模式必须确保 "use strict" 出现在最顶部</p>
+            <strong>
+                建议现代前端开发者，始终使用js的严格模式来编码。
+            </strong>
+            <article>
+                "use strict"; 只能在一段区域内生效。
+                <ul>
+                    <li>不能跨脚本文件</li>
+                    <li>
+                        不能跨
+                        <code> &lt;script&gt; 标签</code>
+                    </li>
+                    <li>
+                        必须配合模块载入，才可以解决此问题！<br />
+                        注意：document.writeln()是无效的
+                    </li>
+                </ul>
+            </article>
+        </main>
+        <script src="./../static/js/03.js" charset="utf-8"></script>
+    </body>
+</html>

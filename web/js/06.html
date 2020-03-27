@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>类型转换</title>
+    </head>
+    <body>
+        <ul>
+            <li>
+                大多数情况下，运算符和函数会自动将赋予他们的值转换为正确的类型。
+            </li>
+            <li>
+                比如， alert()
+                会自动将任何值都转换为字符串以进行显示。算术运算符会将值转换为数字。
+            </li>
+            <li>当然在某些情况下，我们需要将值显式地转换为我们期望的类型。</li>
+        </ul>
+
+        <main>
+            <article>
+                <h3>alert 将数值转为字符串</h3>
+                </script>
+            </article>
+            <article>
+                <h3>原始类型转换函数</h3>
+                <strong>
+                    这里只讲解原始类型的转换， object类型转换这里不会涉及
+                </strong>
+                <table border="1">
+                    <tr>
+                        <th>函数</th>
+                        <th>描述</th>
+                    </tr>
+                    <tr>
+                        <td>Stting()</td>
+                        <td>将任意类型的变量，转为字符串</td>
+                    </tr>
+                    <tr>
+                        <td>Number()</td>
+                        <td>将任意类型的变，转为number类型</td>
+                    </tr>
+
+                    <tr>
+                        <td>Boolean()</td>
+                        <td>将任意类型的变，转为布尔类型（也叫逻辑类型）</td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <h3>数字型转换遵循以下规则</h3>
+                <table border="1">
+                    <tr>
+                        <th>值</th>
+                        <th>转换后的number值</th>
+                    </tr>
+                    <tr>
+                        <td>undefined</td>
+                        <td>NaN</td>
+                    </tr>
+                    <tr>
+                        <td>null</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>true</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>false</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>string</td>
+                        <td>
+                            “按原样读取”字符串，两端的空白会被忽略。
+                            空字符串变成0。转换出错则输出 NaN。
+                        </td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <h3>四则运算中，string类型优先于number类型</h3>
+    <pre>
+        1 + '2' 输出 "12";
+        "1" + 2 输出 "12";
+        1 + 'abcd' 输出 "1abcd";
+    </pre>
+            </article>
+        </main>
+        <script src="/static/js/06.js" charset="utf-8"></script>
+    </body>
+</html>
