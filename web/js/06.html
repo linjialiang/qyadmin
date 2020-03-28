@@ -80,11 +80,17 @@
                 </table>
             </article>
             <article>
-                <h3>四则运算中，string类型优先于number类型</h3>
+                <h3>四则运算中，”加号“作为连字符优先于作为加法运算符</h3>
+                <ul>
+                    <li>1. 四则运算 会自动将值转换成number类型。</li>
+                    <li>2. 加号，可作为四则运算的加法运算符，也可作为“连字符”，加号会优先选择连字符。</li>
+                </ul>
     <pre>
+        1 + 2 输出 3；
         1 + '2' 输出 "12";
         "1" + 2 输出 "12";
         1 + 'abcd' 输出 "1abcd";
+        2 - "1" 输出 1；
     </pre>
             </article>
             <article>
@@ -92,7 +98,8 @@
                 <ul>
                     <li>false -- 仅 0、null、undefined、NaN、空字符（""） 5个值</li>
                     <li>true -- 除了转为false的值以外，其余都是ture</li>
-                    <li>Boolean('0') 输出为 true。因为 '0' 不是空字符串</li>
+                    <li>Boolean('0') 输出为 true。因为 '0' 是字符串，不是数值</li>
+                    <li>Boolean(' ') 输出为 true。以为 ' ' 不是空字符串，包含一个空白符</li>
                 </ul>
             </article>
         </main>
