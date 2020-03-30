@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>交互：alert、prompt 和 confirm</title>
+    </head>
+    <body>
+        <h1>
+            alert、prompt 和 confirm 是浏览器的用户界面函数
+        </h1>
+        <main>
+            <article>
+                <style>
+                    table {
+                        border-collapse: collapse;
+                    }
+                    table th {
+                        color: blue;
+                    }
+                    table th,
+                    table td {
+                        border: 1px solid blue;
+                        padding: 5px 15px;
+                        text-align: center;
+                    }
+                </style>
+                <table>
+                    <tr>
+                        <th>函数</th>
+                        <th>描述</th>
+                    </tr>
+                    <tr>
+                        <td>alert</td>
+                        <td>
+                            浏览器会弹出一个信息弹窗并暂停脚本，直到用户点击了“确定”。
+                        </td>
+                        <script>
+                            alert("Hello This is alert !");
+                        </script>
+                    </tr>
+                    <tr>
+                        <td>prompt</td>
+                        <td>
+                            浏览器会显示一个带有文本消息的模态窗口，还有 input
+                            框和确定/取消按钮。
+                        </td>
+                        <script>
+                            prompt("Hello This is prompt ?", "默认值");
+                        </script>
+                    </tr>
+                    <tr>
+                        <td>confirm</td>
+                        <td>
+                            confirm 函数显示一个带有 question
+                            以及确定和取消两个按钮的模态窗口。 <br />
+                            点击确定返回true，点击取消返回 false。
+                        </td>
+                        <script>
+                            confirm("是否关闭该对话框！");
+                        </script>
+                    </tr>
+                </table>
+            </article>
+        </main>
+        <script>
+            let name = prompt("你叫什么名字!", 'emad');
+            alert('我叫 ' + name);
+        </script>
+    </body>
+</html>

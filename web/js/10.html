@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>条件运算符：if 和 '?'</title>
+    </head>
+    <body>
+        <h1>条件运算符：if 和 '?'</h1>
+        <strong>有时我们需要根据不同条件执行不同的操作。</strong>
+        <p>我们可以使用 if 语句和条件运算符 ?（也称为“问号”运算符）来实现。</p>
+        <main>
+            <article>
+                <h2>“if” 语句</h2>
+                <p>
+                    if(...) 语句计算括号里的条件表达式，如果计算结果是
+                    true，就会执行对应的代码块。
+                </p>
+                <button onclick="test1()">点击测试</button>
+                <script>
+                    function test1() {
+                        let name = prompt("你叫什么名字？", "emad");
+                        if (name === "emad") {
+                            alert("我叫 " + name);
+                        }
+                    }
+                </script>
+                <section>
+                    <h3>布尔转换</h3>
+                    <p>
+                        if (…)
+                        语句会计算圆括号内的表达式，并将计算结果转换为布尔型。
+                    </p>
+                </section>
+                <section>
+                    <h3>
+                        “else” 语句
+                    </h3>
+                    <p>
+                        if 语句有时会包含一个可选的 “else”
+                        块。如果判断条件不成立，就会执行它内部的代码。
+                    </p>
+                    <button onclick="test2()">点击测试</button>
+                    <script>
+                        function test2() {
+                            let name = prompt("你叫什么名字？", "emad");
+                            if (name === "emad") {
+                                alert("我叫 " + name);
+                            } else {
+                                alert("你的名字不符合要求！");
+                            }
+                        }
+                    </script>
+                </section>
+                <section>
+                    <h2>多个条件：“else if”</h2>
+                    <p>
+                        有时我们需要测试一个条件的几个变体。我们可以通过使用
+                        else if 子句实现。
+                    </p>
+                    <button onclick="test3()">点击测试</button>
+                    <script>
+                        function test3() {
+                            let name = prompt("你叫什么名字？", "emad");
+                            if (name === "emad") {
+                                alert("我叫 " + name);
+                            } else if (name === "linjialiang") {
+                                alert("我不叫emad，我叫 " + name);
+                            } else {
+                                alert("sorry 你的名字不符合要求！");
+                            }
+                        }
+                    </script>
+                </section>
+            </article>
+            <article>
+                <h2>条件运算符 ‘?’</h2>
+                <p>有时我们需要根据一个条件去赋值一个变量。</p>
+                <strong
+                    >条件运算符通过问号 ?
+                    表示。有时它被称为三元运算符，被称为“三元”是因为该操作符中有三个操作数。实际上它是
+                    JavaScript 中唯一一个有这么多操作数的操作符。</strong
+                >
+                <br />
+                <button onclick="test4()">点击测试</button>
+                <script>
+                    function test4() {
+                        let age = prompt("你的年龄?");
+                        age < 18 ? alert("你还未成年") : alert("你已经成年了");
+                    }
+                </script>
+            </article>
+        </main>
+    </body>
+</html>
