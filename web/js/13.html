@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>"switch" 语句</title>
+        <style>
+            pre {
+                background-color: #efefef;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>switch 语句可以替代多个 if 判断。</h1>
+        <p>switch 语句为多分支选择的情况提供了一个更具描述性的方式。</p>
+        <strong>
+            switch .. case 的相等指的是严格相等
+        </strong>
+        <article>
+            <h2>语法</h2>
+            <p>
+                switch 语句有至少一个 case 代码块和一个可选的 default 代码块。
+            </p>
+            <pre>
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    [break]
+
+  case 'value2':  // if (x === 'value2')
+    ...
+    [break]
+
+  default:
+    ...
+    [break]
+}
+</pre
+            >
+        </article>
+<script>
+let a = +prompt('a?', '');
+
+if (a == 0) {
+  alert( 0 );
+}
+if (a == 1) {
+  alert( 1 );
+}
+
+if (a == 2 || a == 3) {
+  alert( '2,3' );
+}
+
+switch(a){
+    case '0':
+    case 0:
+        alert(0);
+        break;
+    case 1:
+    case '1':
+        alert(1);
+        break;
+    case
+}
+</script>
+    </body>
+</html>

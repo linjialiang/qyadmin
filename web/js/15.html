@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>函数表达式</title>
+    </head>
+    <body>
+        <h1>函数表达式</h1>
+
+        <p>在 JavaScript 中，函数不是“神奇的语言结构”，而是一种特殊的值。</p>
+
+        <ol>
+            <li>
+                我们在前面章节使用的语法称为 函数声明：
+                <pre>
+function sayHi() {
+  alert( "Hello" );
+}
+</pre
+                >
+            </li>
+            <li>
+                另一种创建函数的语法称为 函数表达式。
+                <pre>
+let sayHi = function() {
+  alert( "Hello" );
+};
+</pre
+                >
+            </li>
+        </ol>
+
+        <script>
+            function sayHi() {
+                alert("Hello");
+            }
+
+            console.log(sayHi); // 显示函数代码
+        </script>
+    </body>
+</html>
