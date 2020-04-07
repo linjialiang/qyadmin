@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>对象</title>
+        <style>
+            pre {
+                background-color: #efefef;
+                padding: 5px;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            table th {
+                color: blue;
+            }
+            table th,
+            table td {
+                border: 1px solid blue;
+                padding: 5px 15px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+            在 JavaScript
+            中，对象几乎渗透到了这门编程语言的方方面面。所以，在我们深入理解这门语言之前，必须先理解对象。
+        </p>
+        <article>
+            <h2>创建一个空的对象</h2>
+            <ul>
+                <li>
+                    <pre>
+let user = new Object(); // “构造函数” 的语法
+                </pre
+                    >
+                </li>
+                <li>
+                    <pre>
+let user = {}; // “字面量” 的语法
+                </pre
+                    >
+                </li>
+            </ul>
+        </article>
+        <article>
+            <h2>文本和属性</h2>
+            <p>
+                我们可以在创建对象的时候，立即将一些属性以键值对的形式放到 {...}
+                中。
+            </p>
+            <pre>
+let user = {     // 一个对象
+  name: "John",  // 键 "name"，值 "John"
+  age: 30        // 键 "age"，值 30
+};
+        </pre
+            >
+        </article>
+        <article>
+            <h2>我们可以随时添加、删除和读取属性。</h2>
+
+            <button type="button" onclick="exportOriginal()">
+                输出原始信息
+            </button>
+            <button type="button" onclick="addEducation()">
+                增加学历的信息
+            </button>
+            <button type="button" onclick="deleteAge()">
+                删除年龄的信息
+            </button>
+            <section id="add-study">
+                <!-- 输出表格信息 -->
+            </section>
+            <script>
+                const user = {
+                    姓名: "madnesslin",
+                    年龄: 31,
+                };
+
+                const clone = Object.assign({}, user);
+
+                // 原始信息
+                let exportOriginal = () => {
+                    exportHtml(clone);
+                };
+
+                // 增加对象的学历信息
+                let addEducation = () => {
+                    const data = prompt("请输入您的学历", "");
+                    user["学历"] = data;
+
+                    exportHtml(user);
+                };
+
+                // 删除年龄信息
+                let deleteAge = () => {
+                    delete user["年龄"];
+
+                    exportHtml(user);
+                };
+
+                let exportHtml = (obj) => {
+                    html = `
+                        <table>
+                            <tr>
+                                <th>分类</th>
+                                <th>信息</th>
+                            </tr>
+                    `;
+
+                    for (const key in obj) {
+                        if (obj.hasOwnProperty(key)) {
+                            const element = obj[key];
+                            html += `
+                                <tr>
+                                    <td>
+                                    ${key}
+                                    </td>
+                                    <td>
+                                    ${element}
+                                    </td>
+                                </tr>
+                            `;
+                        }
+                    }
+
+                    html += "</table>";
+
+                    const tagPush = document.getElementById("add-study");
+                    tagPush.innerHTML = html;
+                };
+            </script>
+        </article>
+        <article>
+            <h2>对象属性求和</h2>
+            <button type="button" onclick="objSum()">点击求和</button>
+            <script>
+                const salaries = {
+                    John: 100,
+                    Ann: 160,
+                    Pete: "130",
+                };
+
+                let objSum = () => {
+                    // isEmpty("salaries");
+                    let sum = 0;
+                    for (const key in salaries) {
+                        if (salaries.hasOwnProperty(key)) {
+                            const element = Number(salaries[key]);
+                            sum += element;
+                        }
+                    }
+                    console.log(sum);
+                };
+            </script>
+        </article>
+    </body>
+</html>
