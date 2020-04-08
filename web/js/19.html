@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>对象方法，"this"</title>
+    </head>
+    <body>
+        <h1>对象方法，"this"</h1>
+        <p>“this” 用于访问当前对象</p>
+        <article>
+            <h2>方法中的 “this”</h2>
+            <button onclick="test1()">点击测试</button>
+            <script>
+                let test1 = () => {
+                    let user = {
+                        name: "John",
+                        age: 30,
+
+                        sayHi() {
+                            // "this" 指的是“当前的对象”
+                            alert(this.name);
+                        },
+                    };
+
+                    user.sayHi(); // John
+                };
+            </script>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Symbol 类型</title>
+        <style>
+            pre {
+                background-color: #efefef;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Symbol 类型</h1>
+        <strong>“Symbol” 值表示唯一的标识符。</strong>
+        <article>
+            <h2>Symbol 的使用方式</h2>
+            <dl>
+                <dt>可以使用 Symbol() 来创建这种类型的值：</dt>
+                <dd>
+                    <pre>
+let id =Symbol();
+                </pre
+                    >
+                </dd>
+                <dt>
+                    创建时，我们可以给 Symbol 一个描述（也称为 Symbol
+                    名），这在代码调试时非常有用：
+                </dt>
+                <dd>
+                    <pre>
+let id = Symbol("id");
+                </pre
+                    >
+                </dd>
+            </dl>
+        </article>
+        <article>
+            <h2>这里有两个描述相同的 Symbol —— 它们不相等：</h2>
+            <button type="button" onclick="test1()">点击测试</button>
+            <script>
+                let test1 = () => {
+                    let id1 = Symbol("id");
+                    let id2 = Symbol("id");
+                    if (id1 != id2) {
+                        alert(
+                            "Symbol 保证是唯一的。即使我们创建了许多具有相同描述的 Symbol，它们的值也是不同。描述只是一个标签，不影响任何东西。"
+                        );
+                    }
+                };
+            </script>
+        </article>
+        <article>
+            <h2>全局 symbol</h2>
+            <p>
+                正如我们所看到的，通常所有的 Symbol
+                都是不同的，即使它们有相同的名字。但有时我们想要名字相同的
+                Symbol 具有相同的实体。例如，应用程序的不同部分想要访问的 Symbol
+                "id" 指的是完全相同的属性。
+            </p>
+            <p>
+                为了实现这一点，这里有一个 全局 Symbol
+                注册表。我们可以在其中创建 Symbol
+                并在稍后访问它们，它可以确保每次访问相同名字的 Symbol
+                时，返回的都是相同的 Symbol。
+            </p>
+            <p>
+                要从注册表中读取（不存在则创建）Symbol，请使用 Symbol.for(key)。
+            </p>
+            <p>
+                该调用会检查全局注册表，如果有一个描述为 key 的 Symbol，则返回该
+                Symbol，否则将创建一个新 Symbol（Symbol(key)），并通过给定的 key
+                将其存储在注册表中。
+            </p>
+            <button onclick="test2()">点击测试</button>
+            <script>
+                let test2 = () => {
+                    // 从全局注册表中读取
+                    let id = Symbol.for("id"); // 如果该 Symbol 不存在，则创建它
+
+                    // 再次读取（可能是在代码中的另一个位置）
+                    let idAgain = Symbol.for("id");
+
+                    // 相同的 Symbol
+                    alert(id === idAgain); // true
+                };
+            </script>
+        </article>
+        <article>
+            <h2>Symbol.keyFor</h2>
+            <p>
+                对于全局 Symbol，不仅有 Symbol.for(key) 按名字返回一个
+                Symbol，还有一个反向调用：Symbol.keyFor(sym)，它的作用完全反过来：通过全局
+                Symbol 返回一个名字。
+            </p>
+            <button onclick="test3()">通过 Symbol 获取 name</button>
+            <button onclick="test4()">通过 Symbol 获取 name</button>
+            <script>
+                let test3 = () => {
+                    // 通过 name 获取 Symbol
+                    let sym = Symbol.for("name");
+                    // 通过 Symbol 获取 name
+                    alert(Symbol.keyFor(sym)); // name
+                };
+
+                let test4 = () => {
+                    // 通过 name 获取 Symbol
+                    let sym2 = Symbol.for("id");
+
+                    // 通过 Symbol 获取 name
+                    alert(Symbol.keyFor(sym2)); // id
+                };
+            </script>
+        </article>
+    </body>
+</html>

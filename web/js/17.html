@@ -137,6 +137,7 @@ let user = {     // 一个对象
         <article>
             <h2>对象属性求和</h2>
             <button type="button" onclick="objSum()">点击求和</button>
+            <span id="sum"></span>
             <script>
                 const salaries = {
                     John: 100,
@@ -153,7 +154,7 @@ let user = {     // 一个对象
                             sum += element;
                         }
                     }
-                    console.log(sum);
+                    document.getElementById('sum').innerHTML = '计算总和为： ' + sum;
                 };
             </script>
         </article>
