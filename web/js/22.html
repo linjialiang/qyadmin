@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>数字类型</title>
+    </head>
+    <body>
+        <h1>数字类型</h1>
+        <button onclick="test1()">输出<em>1e5</em></button>
+        <script>
+            function test1() {
+                let money = 1e5;
+                alert(money);
+            }
+        </script>
+        <br />
+        <button onclick="test2()">输出 <em>1e-3</em></button>
+        <script>
+            function test2() {
+                let money = 1e-3;
+                alert(money);
+            }
+        </script>
+        <article>
+            <h2>舍入</h2>
+
+            <dl>
+                <dt>Math.floor</dt>
+                <dd>向下舍入：3.1 变成 3，-1.1 变成 -2。</dd>
+                <dt>Math.ceil</dt>
+                <dd>向上舍入：3.1 变成 4，-1.1 变成 -1。</dd>
+                <dt>Math.round</dt>
+                <dd>
+                    向最近的整数舍入：3.1 变成 3，3.6 变成 4，-1.1 变成 -1。
+                </dd>
+                <dt>Math.trunc（IE 浏览器不支持这个方法）</dt>
+                <dd>
+                    移除小数点后的所有内容而没有舍入：3.1 变成 3，-1.1 变成 -1。
+                </dd>
+            </dl>
+        </article>
+    </body>
+</html>

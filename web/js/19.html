@@ -27,5 +27,85 @@
                 };
             </script>
         </article>
+        <article>
+            <h2>箭头函数没有自己的 “this”</h2>
+            <button onclick="test2()">点击测试</button>
+            <script>
+                let test2 = () => {
+                    let user = {
+                        firstName: "Ilya",
+                        sayHi() {
+                            let arrow = () => alert(this.firstName);
+                            arrow();
+                        },
+                    };
+
+                    user.sayHi(); // Ilya
+                };
+            </script>
+        </article>
+        <article>
+            <h2>检查语法</h2>
+            <button onclick="test3()">点击测试</button>
+            <script>
+                let test3 = () => {
+                    let user = {
+                        name: "John",
+                        go: function () {
+                            alert(this.name);
+                        },
+                    };
+                    alert(user.go);
+                    user.go();
+                };
+            </script>
+        </article>
+        <article>
+            <h2>创建一个计算器</h2>
+            <button onclick="calculator.input()">输入两个值</button>
+            <button onclick="calculator.sum()">求和</button>
+            <button onclick="calculator.mul()">乘积</button>
+            <script>
+                let calculator = {
+                    input() {
+                        // 前面加上 + 号，表示将字符串转成数值
+                        this.a = +prompt("a ?", 0);
+                        this.b = +prompt("b ?", 0);
+                    },
+                    sum() {
+                        alert(this.a + this.b);
+                    },
+                    mul() {
+                        alert(this.a * this.b);
+                    },
+                };
+            </script>
+        </article>
+        <article>
+            <h2>链式（调用）</h2>
+            <button onclick="test4()">点击测试</button>
+            <script>
+                let ladder = {
+                    step: 0,
+                    up() {
+                        this.step++;
+                        return this; // 链式操作必须输出为this
+                    },
+                    down() {
+                        this.step--;
+                        return this; // 链式操作必须输出为this
+                    },
+                    showStep: function () {
+                        // 显示当前的 step
+                        alert(this.step);
+                        return this; // 链式操作必须输出为this
+                    },
+                };
+
+                function test4() {
+                    ladder.up().up().up().down().showStep();
+                }
+            </script>
+        </article>
     </body>
 </html>

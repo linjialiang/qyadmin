@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>数组</title>
+        <style>
+            pre {
+                background-color: #efefef;
+                padding: 5px;
+            }
+            table {
+            }
+        </style>
+        <link rel="stylesheet" href="/static/css/table.css" charset="UTF-8" />
+    </head>
+    <body>
+        <h1>数组</h1>
+        <strong>
+            对象允许存储键值集合，这很好。
+            但对象不是有序集合，不能提供能够管理元素顺序的方法。
+            如果想要在已有的元素“之间”插入一个新的属性，对象就不太适用了。
+            这时一个特殊的数据结构数组（Array）就派上用场了，它能存储有序的集合。
+        </strong>
+
+        <article>
+            <h2>数组的声明</h2>
+            <strong>创建一个空数组有两种语法：</strong>
+            <pre>
+let arr = new Array();
+let arr = [];
+</pre
+            >
+            <p>
+                绝大多数情况下使用的都是第二种语法。我们可以在方括号中添加初始元素：
+            </p>
+            <pre>
+let arr = ["Apple", "Orange", "Plum"];
+</pre
+            >
+        </article>
+        <article>
+            <h2>数组可以存储任何类型的元素。</h2>
+            <pre>
+// 混合值
+let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+// 获取索引为 1 的对象然后显示它的 name
+alert( arr[1].name ); // John
+
+// 获取索引为 3 的函数并执行
+arr[3](); // hello
+</pre
+            >
+        </article>
+        <article>
+            <h2>数组支持 “队列” 和 “栈” 操作</h2>
+            <dl>
+                <dt>队列</dt>
+                <dd>先进先出，由 push()、shift() 两个方法实现</dd>
+                <dt>栈</dt>
+                <dd>先进后出，由push()、pop() 两个方法实现</dd>
+            </dl>
+
+            <section>
+                <h3>pop/push, shift/unshift 方法</h3>
+                <ol>
+                    <li>
+                        <strong>操作数组元素的方法说明</strong>
+                        <table>
+                            <tr>
+                                <th>方法</th>
+                                <th>说明</th>
+                                <th>作用于数组 “首端/末端” 的方法</th>
+                            </tr>
+                            <tr>
+                                <th>pop</th>
+                                <td>取出并返回数组的最后一个元素</td>
+                                <td>末端</td>
+                            </tr>
+                            <tr>
+                                <th>push</th>
+                                <td>在数组末端添加元素</td>
+                                <td>末端</td>
+                            </tr>
+                            <tr>
+                                <th>shift</th>
+                                <td>取出数组的第一个元素并返回它</td>
+                                <td>首端</td>
+                            </tr>
+                            <tr>
+                                <th>unshift</th>
+                                <td>在数组的首端添加元素</td>
+                                <td>首端</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <strong>数组实现队列</strong>
+                        <table>
+                            <tr>
+                                <th>方法</th>
+                                <th>说明</th>
+                            </tr>
+                            <tr>
+                                <td>push()</td>
+                                <td>先在数组末端添加一个元素</td>
+                            </tr>
+                            <tr>
+                                <td>shift()</td>
+                                <td>
+                                    取出队列首端的一个元素，整个队列往前移，这样原先排第二的元素现在排在了第一。
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <strong>数组实现栈</strong>
+                        <table>
+                            <tr>
+                                <th>方法</th>
+                                <th>说明</th>
+                            </tr>
+                            <tr>
+                                <td>push()</td>
+                                <td>先在数组末端添加一个元素</td>
+                            </tr>
+                            <tr>
+                                <td>pop()</td>
+                                <td>
+                                    从末端取出一个元素。所以新元素的添加和取出都是从“末端”开始的。
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                </ol>
+            </section>
+        </article>
+        <article>
+            <h2>举例</h2>
+            <table>
+                <tr>
+                    <th>按钮</th>
+                    <th>按钮说明</th>
+                </tr>
+                <tr>
+                    <th><button onclick="testBase()">重置原始数组</button></th>
+                    <td>重置数组为原始数组</td>
+                </tr>
+                <tr>
+                    <th><button onclick="testPop()">pop方法</button></th>
+                    <td>在数组中删除最后一个元素，并返回元素值</td>
+                </tr>
+                <tr>
+                    <th><button onclick="testPush()">push方法</button></th>
+                    <td>在数组末端添加元素</td>
+                </tr>
+                <tr>
+                    <th><button onclick="testShift()">shift方法</button></th>
+                    <td>在数组中删除第一个元素，并返回元素值</td>
+                </tr>
+                <tr>
+                    <th>
+                        <button onclick="testUnshift()">unshift方法</button>
+                    </th>
+                    <td>在数组的首端添加元素</td>
+                </tr>
+            </table>
+            <div style="margin-bottom: 10px;"></div>
+            <table id="tableTest"></table>
+            <script>
+                let arrayTest = ["苹果", "香蕉", "葡萄"];
+                function innerHTML() {
+                    let html = `
+                            <tr>
+                                <th>序号</th>
+                                <th>数组元素内容</th>
+                            </tr>
+                    `;
+                    arrayTest.forEach((element, index) => {
+                        html += `
+                            <tr>
+                                <td>${index}</td>
+                                <td>${element}</td>
+                            </tr>
+                        `;
+                    });
+                    document.getElementById("tableTest").innerHTML = html;
+                }
+
+                function testBase() {
+                    arrayTest = ["苹果", "香蕉", "葡萄"];
+                    innerHTML();
+                }
+
+                function testPop() {
+                    alert(
+                        `取出数组最后一个元素，值为：\n${arrayTest.pop()}\n被取出来的元素会直接删除`
+                    );
+                    innerHTML();
+                }
+
+                function testPush() {
+                    let element = prompt(
+                        `在数组末端添加元素，请输入值（请不要为空）：`,
+                        ""
+                    );
+                    if (!element) {
+                        alert("数组添加元素失败，元素值不能为空");
+                        return false;
+                    }
+                    arrayTest.push(element);
+                    innerHTML();
+                }
+
+                function testShift() {
+                    alert(
+                        `取出数组最后一个元素，值为：\n${arrayTest.shift()}\n被取出来的元素会直接删除`
+                    );
+                    innerHTML();
+                }
+                function testUnshift() {
+                    let element = prompt(
+                        `在数组首端添加元素，请输入值（请不要为空）：`,
+                        ""
+                    );
+                    if (!element) {
+                        alert("数组添加元素失败，元素值不能为空");
+                        return false;
+                    }
+                    arrayTest.unshift(element);
+                    innerHTML();
+                }
+            </script>
+        </article>
+        <article>
+            <h2>性能</h2>
+            <strong>
+                push/pop 方法运行的比较快，而 shift/unshift 比较慢。
+            </strong>
+        </article>
+        <article>
+            <h2>数组是引用而不是拷贝</h2>
+            <strong>数组是对象。所以数组间的赋值其实是在引用同一数组。</strong>
+        </article>
+        <div style="margin-bottom: 300px;"></div>
+    </body>
+</html>

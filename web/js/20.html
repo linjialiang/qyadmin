@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>对象 — 原始值转换</title>
+    </head>
+    <body>
+        <h1>对象 — 原始值转换</h1>
+        <p>对象到原始值的转换，是由许多期望以原始值作为值的内建函数和运算符自动调用的。</p>
+        <strong>这里有三种类型（hint）：</strong>
+        <ul>
+            <li>"string"（对于 alert 和其他需要字符串的操作）</li>
+            <li>"number"（对于数学运算）</li>
+            <li>"default"（少数运算符）</li>
+        </ul>
+        <strong>在实践中，为了便于进行日志记录或调试，对于所有能够返回一种“可读性好”的对象的表达形式的转换，只实现以 obj.toString() 作为全能转换的方法就够了。</strong>
+        <article>
+            <h2>对象-转换为原始值的过程说明</h2>
+            <strong>
+                而为了进行转换，JavaScript 尝试查找并调用三个对象方法：
+            </strong>
+            <dl>
+                <dt>1. 首先调用： obj[Symbol.toPrimitive](hint)</dt>
+                <dd>带有 symbol 键 Symbol.toPrimitive（系统 symbol）的方法，如果这个方法存在的话</dd>
+                <dt>2. 否则，如果 hint 是 "string"</dt>
+                <dd>尝试 obj.toString() 和 obj.valueOf()，无论哪个存在。</dd>
+                <dt>3. 否则，如果 hint 是 "number" 或 "default"</dt>
+                <dd>尝试 obj.valueOf() 和 obj.toString()，无论哪个存在。</dd>
+            </ul>
+        </article>
+        <article>
+            <h2>对象 - 转为字符串举例</h2>
+        </article>
+    </body>
+</html>

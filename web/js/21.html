@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>构造器和操作符 "new"</title>
+    </head>
+    <body>
+        <h1>构造器和操作符 "new"</h1>
+        <p>
+            常规的 {...}
+            语法允许创建一个对象。但是我们经常需要创建许多类似的对象，例如多个用户或菜单项等。
+            这可以使用构造函数和 "new" 操作符来实现。
+        </p>
+        <article>
+            <h2>构造函数</h2>
+            <p>
+                构造函数在技术上是常规函数。不过程序员在编写代码时有两个约定：
+            </p>
+            <ul>
+                <li>1. 它们的命名以大写字母开头。</li>
+                <li>2. 它们只能由 "new" 操作符来执行。</li>
+            </ul>
+            <button onclick="test1()">点击测试</button>
+            <script>
+                function User(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+
+                let user = new User("emad", 13);
+
+                let test1 = () => {
+                    alert("我叫" + user.name + "今年" + user.age + "岁");
+                };
+            </script>
+        </article>
+        <article>
+            <h2>构造器模式测试：new.target</h2>
+            <p>
+                我们通过 new.target 也可以让 new
+                调用和常规调用做相同的工作，像这样：
+            </p>
+            <button onclick="test2()">点击测试</button>
+            <script>
+                let test2 = () => {
+                    function User(name) {
+                        if (!new.target) return new User(name);
+
+                        this.name = name;
+                    }
+
+                    let emad = User("emad");
+                    alert(emad.name);
+                };
+            </script>
+        </article>
+    </body>
+</html>
