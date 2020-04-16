@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSON 方法，toJSON</title>
+        <link rel="stylesheet" href="/static/css/table.css" charset="UTF-8" />
+    </head>
+    <body>
+        <h1>JSON 方法，toJSON</h1>
+        <strong>
+            假设我们有一个复杂的对象，我们希望将其转换为字符串，以通过网络发送，或者只是为了在日志中输出它。
+        </strong>
+        <p>
+            JSON（JavaScript Object Notation）是表示值和对象的通用格式。 在 RFC
+            4627 标准中有对其的描述。 最初它是为 JavaScript
+            而创建的，但许多其他编程语言也有用于处理它的库。 因此，当客户端使用
+            JavaScript 而服务器端是使用 Ruby/PHP/Java 等语言编写的时，使用
+            JSON可以很容易地进行数据交换。
+        </p>
+        <article>
+            <h2>JavaScript 提供了如下方法处理JSON：</h2>
+            <table>
+                <tr>
+                    <th>方法</th>
+                    <th>描述</th>
+                </tr>
+                <tr>
+                    <th>JSON.stringify</th>
+                    <td>将对象转换为 JSON</td>
+                </tr>
+                <tr>
+                    <th>JSON.parse</th>
+                    <td>将 JSON 转换回对象</td>
+                </tr>
+            </table>
+        </article>
+        <article>
+            <h2>JSON.stringify 方法举例</h2>
+            <button onclick="test1()">点击测试</button>
+            <script>
+                function test1() {
+                    let student = {
+                        name: "John",
+                        age: 30,
+                        isAdmin: false,
+                        courses: ["html", "css", "js"],
+                        wife: null,
+                    };
+                    let json = JSON.stringify(student, null, 4);
+                    console.log(json);
+                    let object = JSON.parse(json);
+                    console.log(object);
+                    let pp = "absred";
+                    console.log(JSON.stringify(pp, null, 4));
+                }
+            </script>
+        </article>
+        <article>
+            <h2>JSON.stringify 也可以应用于原始（primitive）数据类型。</h2>
+            <p>JSON 支持以下数据类型：</p>
+            <table>
+                <tr>
+                    <td>Objects { ... }</td>
+                </tr>
+                <tr>
+                    <td>Arrays [ ... ]</td>
+                </tr>
+                <tr>
+                    <td>strings</td>
+                </tr>
+                <tr>
+                    <td>numbers</td>
+                </tr>
+                <tr>
+                    <td>boolean values true/false</td>
+                </tr>
+                <tr>
+                    <td>null</td>
+                </tr>
+            </table>
+        </article>
+        <article>
+            <h2>排除和转换：replacer</h2>
+            <strong>JSON.stringify 的第二个参数用来过滤参数</strong>
+            <button onclick="test2()">点击测试</button>
+            <script>
+                function test2() {
+                    let objTest2 = {
+                        name: "emad",
+                        age: 16,
+                        address: "龙港市徐家庄村",
+                    };
+                    let replace = ["name", "age"];
+                    console.log(JSON.stringify(objTest2, replace, 2));
+                }
+            </script>
+            <button onclick="test3()">点击测试</button>
+            <script>
+                let test3 = () => {
+                    let obj1 = {
+                        name: "emad",
+                        age: 16,
+                        address: "龙港市",
+                    };
+                    let obj2 = obj1;
+                    let obj3 = { ...obj1 };
+                    obj2.xueli = "本科";
+                    obj3.xueli = "大专";
+                    console.log(obj1);
+                    console.log(obj2);
+                    console.log(obj3);
+                };
+            </script>
+        </article>
+    </body>
+</html>

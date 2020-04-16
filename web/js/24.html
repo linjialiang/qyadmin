@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Map and Set（映射和集合）</title>
+        <link rel="stylesheet" href="/static/css/table.css" charset="utf-8" />
+    </head>
+    <body>
+        <h1>Map and Set（映射和集合）</h1>
+        <p>
+            Map 是一个带键的数据项的集合，就像一个 Object 一样。
+            但是它们最大的差别是 Map 允许任何类型的键（key）。
+            <strong>Map 类似php中的关联数组</strong>
+        </p>
+        <p>
+            Set是一个特殊的类型集合 －
+            “值的集合”（没有键），它的每一个值只能出现一次。
+        </p>
+        <article>
+            <h2>Map 与 Set 方法和属性</h2>
+            <section>
+                <h3>Map方法和属性如下：</h3>
+                <ol>
+                    <li>new Map() —— 创建 map。</li>
+                    <li>map.set(key, value) —— 根据键存储值。</li>
+                    <li>
+                        map.get(key) —— 根据键来返回值，如果 map 中不存在对应的
+                        key，则返回 undefined。
+                    </li>
+                    <li>
+                        map.has(key) —— 如果 key 存在则返回 true，否则返回
+                        false。
+                    </li>
+                    <li>map.delete(key) —— 删除指定键的值。</li>
+                    <li>map.clear() —— 清空 map。</li>
+                    <li>map.size —— 返回当前元素个数。</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Set的主要方法如下：</h3>
+                <ol>
+                    <li>
+                        new Set(iterable) —— 创建一个 set，如果提供了一个
+                        iterable 对象（通常是数组），将会从数组里面复制值到 set
+                        中。
+                    </li>
+                    <li>set.add(value) —— 添加一个值，返回 set 本身</li>
+                    <li>
+                        set.delete(value) —— 删除值，如果 value
+                        在这个方法调用的时候存在则返回 true ，否则返回 false。
+                    </li>
+                    <li>
+                        set.has(value) —— 如果 value 在 set 中，返回
+                        true，否则返回 false。
+                    </li>
+                    <li>set.clear() —— 清空 set。</li>
+                    <li>set.size —— 返回元素个数。</li>
+                </ol>
+            </section>
+        </article>
+        <article>
+            <h2>迭代</h2>
+            <p>
+                Map 迭代和 Set 迭代基本类似
+            </p>
+            <section>
+                <h3>如果要在 map 里使用循环，可以使用以下三个方法：</h3>
+                <table>
+                    <tr>
+                        <th>方法</th>
+                        <th>描述</th>
+                    </tr>
+                    <tr>
+                        <th>map.keys()</th>
+                        <td>
+                            遍历并返回所有的键（returns an iterable for keys）
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>map.values()</th>
+                        <td>
+                            遍历并返回所有的值（returns an iterable for values）
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>map.entries()</th>
+                        <td>
+                            遍历并返回所有的实体（returns an iterable for
+                            entries）[key, value]，for..of
+                            在默认情况下使用的就是这个。
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h3>Map 中用于迭代的方法在 Set 中也同样支持：</h3>
+                <table>
+                    <tr>
+                        <th>方法</th>
+                        <th>描述</th>
+                    </tr>
+                    <tr>
+                        <th>set.keys()</th>
+                        <td>
+                            遍历并返回所有的值（returns an iterable object for
+                            values）
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>set.values()</th>
+                        <td>
+                            与 set.keys() 作用相同，这是为了兼容 Map
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>set.entries()</th>
+                        <td>
+                            遍历并返回所有的实体（returns an iterable object for
+                            entries）[value, value]，它的存在也是为了兼容 Map。
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </article>
+        <article>
+            <h2>案例</h2>
+            <section>
+                <h3>Map 案例</h3>
+                <button onclick="export_apple()">返回apple映射的值</button>
+                <button onclick="export_size()">返回map的元素个数</button>
+                <button onclick="delete_apple()">删除apple元素</button>
+                <script>
+                    let map = new Map();
+                    map.set("apple", "苹果");
+                    map.set("banana", "香蕉");
+                    function export_apple() {
+                        alert(map.get("apple"));
+                    }
+                    function export_size() {
+                        alert(map.size);
+                    }
+                    function delete_apple() {
+                        if (map.delete("apple")) {
+                            alert("apple元素删除成功");
+                            alert(map.size);
+                        }
+                    }
+                </script>
+            </section>
+            <section>
+                <h3>Set 案例</h3>
+                <button onclick="setSize()">返回size的元素个数</button>
+                <script>
+                    let set = new Set();
+                    let john = { name: "John" };
+                    let pete = { name: "Pete" };
+                    let mary = { name: "Mary" };
+                    function setSize() {
+                        set.add(john);
+                        alert(set.size);
+                    }
+                </script>
+            </section>
+        </article>
+    </body>
+</html>

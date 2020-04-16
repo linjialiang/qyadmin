@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WeakMap and WeakSet（弱映射和弱集合）</title>
+        <style>
+            pre{
+                padding: 5px;
+                background-color: #efefef;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>WeakMap and WeakSet（弱映射和弱集合）</h1>
+        <pre>
+WeakMap 是类似于 Map 的集合，它仅允许对象作为键，并且一旦通过其他方式无法访问它们，便会将它们与其关联值一同删除。
+
+WeakSet 是类似于 Set 的集合，它仅存储对象，并且一旦通过其他方式无法访问它们，便会将其删除。
+
+它们都不支持引用所有键或其计数的方法和属性。仅允许单个操作。
+WeakMap 和 WeakSet 被用作“主要”对象存储之外的“辅助”数据结构。
+一旦将对象从主存储器中删除，如果该对象仅被用作 WeakMap 或 WeakSet 的键，那么它将被自动清除。</pre
+        >
+    </body>
+</html>
