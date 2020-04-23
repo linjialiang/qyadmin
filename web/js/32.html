@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>属性标志和属性描述符</title>
+    </head>
+
+    <body>
+        <h1>属性标志和属性描述符</h1>
+        <script>
+            let user = {
+                name: "John",
+                toString() {
+                    return this.name;
+                },
+            };
+
+            Object.defineProperty(user, "toString", {
+                enumerable: false,
+            });
+
+            // 现在我们的 toString 消失了：
+            for (let key in user) console.log(key); // name
+            console.log(user.toString());
+
+        </script>
+    </body>
+</html>

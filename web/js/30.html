@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>定时器</title>
+    </head>
+    <body>
+        <h1>调度：setTimeout 和 setInterval</h1>
+        <strong>
+            setTimeout 优于 setInterval
+            <br />
+            实际操作过程请尽量使用 setTimeout 嵌套来替代 setInterval
+        </strong>
+
+        <article>
+            <h2>每秒输出一次</h2>
+            <p>
+                编写一个函数 printNumbers(from,
+                to)，使其每秒输出一个数字，数字从 from 开始，到 to 结束。
+            </p>
+            <button onclick="test1()">
+                点击测试
+            </button>
+            <script>
+                let test1 = () => {
+                    let printNumbers = (from, to) => {
+                        let i = from;
+                        do {
+                            setTimeout(function run () {
+                                from++;
+                                setTimeout(run, 1000);
+                            }, 1000);
+                        } while (from > to);
+                    };
+                };
+
+                let i = 1;
+                setTimeout(function run() {
+                    func(i++);
+                    setTimeout(run, 100);
+                }, 100);
+            </script>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>函数对象</title>
+    </head>
+    <body>
+        <article>
+            <h2>命名函数表达式</h2>
+            <strong>
+                命名函数表达式（NFE，Named Function
+                Expression），指带有名字的函数表达式的术语。
+            </strong>
+            <p>关于名字 func 有两个特殊的地方，这就是添加它的原因：</p>
+            <ol>
+                <li>它允许函数在内部引用自己。</li>
+                <li>它在函数外是不可见的。</li>
+            </ol>
+            <section>
+                <h3>
+                    例如，下面的函数 sayHi 会在没有入参 who 时，以 "Guest"
+                    为入参调用自己：
+                </h3>
+                <button onclick="test1()">
+                    点击测试
+                </button>
+                <script>
+                    function test1() {
+                        let sayHi = function func(who) {
+                            if (who) {
+                                alert(`Hello, ${who}`);
+                            } else {
+                                func("Guest"); // 使用 func 再次调用函数自身
+                            }
+                        };
+
+                        sayHi(); // Hello, Guest
+
+                        // 但这不工作：
+                        func(); // Error, func is not defined（在函数外不可见）
+                    }
+                </script>
+            </section>
+        </article>
+
+        <script>
+            function makeCounter() {
+                // 不需要这个了
+                let count = 0;
+                function counter() {
+                    return count++;
+                }
+
+                counter.set = function (value) {
+                    return (count = value);
+                };
+
+                counter.decrease = function () {
+                    return --count;
+                };
+
+                return counter;
+            }
+
+            let counter = makeCounter();
+
+            // console.log(counter()); // 0
+            // console.log(counter()); // 0
+            // console.log(counter()); // 0
+            // console.log(counter.set(8)); // 1
+            // console.log(counter.decrease(1)); // 1
+            // console.log(counter.decrease(1)); // 1
+            // console.log(counter.decrease(1)); // 1
+        </script>
+        <script>
+            function sum(a) {
+                let currentSum = a;
+
+                function f(b) {
+                    currentSum += b;
+                    return f;
+                }
+
+                f.toString = function () {
+                    return currentSum;
+                };
+
+                return f;
+            }
+            alert(sum(1)(2));
+
+        </script>
+    </body>
+</html>
